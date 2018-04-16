@@ -15,16 +15,16 @@ for(i in 1:10)
 {
   for(j in 1:10)
   {
-    correlations[[i]][,j] = apply(tests[[i]],1,function(x) cor(x,zero[j,]))
+    correlations[[i]][,j] = apply(tests[[i]],1,function(x) cor(x,patterns[j,]))
   }
 };
 
 results <- lapply(1:10, function(x) vector(mode="integer",length=nrow(tests[[x]])));
 for(i in 1:10)
 {
-  for(j in 1:nrow(corr[[i]]))
+  for(j in 1:nrow(correlations[[i]]))
   {
-    results[[i]][j]=which.max(corr[[i]][j,])-1
+    results[[i]][j]=which.max(correlations[[i]][j,])-1
   }
 };
 
