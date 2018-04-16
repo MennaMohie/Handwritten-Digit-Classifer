@@ -15,7 +15,7 @@ for(i in 1:10)
 {
   for(j in 1:10)
   {
-    correlations[[i]][,j] = apply(tests[[i]],1,function(x) correlations(x,zero[j,]))
+    correlations[[i]][,j] = apply(tests[[i]],1,function(x) cor(x,zero[j,]))
   }
 };
 
@@ -26,4 +26,10 @@ for(i in 1:10)
   {
     results[[i]][j]=which.max(corr[[i]][j,])-1
   }
-}
+};
+
+correct <- 0;
+for(i in 1:10)
+  correct<- correct + length(which(results[[i]]==i-1));
+accuracy <- (correct/10000)*100
+accuracy
