@@ -30,6 +30,6 @@ for(i in 1:10)
 
 correct <- 0;
 for(i in 1:10)
-  correct<- correct + length(which(results[[i]]==i-1));
-accuracy <- (correct/10000)*100
+  correct<- correct + length(which(results[[i]]==(i-1)));
+accuracy <- (correct/10000)*100;
 accuracy
