@@ -1,0 +1,1 @@
+data <- R.matlab::readMat("mnist_all.mat")
