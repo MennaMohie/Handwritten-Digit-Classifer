@@ -17,4 +17,13 @@ for(i in 1:10)
   {
     correlations[[i]][,j] = apply(tests[[i]],1,function(x) correlations(x,zero[j,]))
   }
+};
+
+results <- lapply(1:10, function(x) vector(mode="integer",length=nrow(tests[[x]])));
+for(i in 1:10)
+{
+  for(j in 1:nrow(corr[[i]]))
+  {
+    results[[i]][j]=which.max(corr[[i]][j,])-1
+  }
 }
