@@ -1,3 +1,5 @@
+# data: https://cs.nyu.edu/~roweis/data/mnist_all.mat
+
 data <- R.matlab::readMat("mnist_all.mat");
 
 tests <- list(data[[2]],data[[4]],data[[6]],data[[8]],
